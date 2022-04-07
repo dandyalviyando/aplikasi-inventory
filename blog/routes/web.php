@@ -36,6 +36,8 @@ Route::get('/mutasi/pdf', 'MutasiController@pdf');
 Route::resource('mutasi', 'MutasiController');
 
 Route::get('/penjualan/pdf', 'PenjualanController@pdf');
+Route::get('/penjualan/filter-form', 'PenjualanController@filterForm');
+Route::get('/penjualan/filter-pdf', 'PenjualanController@filterPdf');
 Route::resource('penjualan', 'PenjualanController');
 
 

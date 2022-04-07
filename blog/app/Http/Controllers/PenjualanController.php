@@ -159,7 +159,7 @@ class PenjualanController extends Controller
 
     public function pdf()
     {
-        $penjualan = penjualan::join('barangs','barangs.id','penjualans.barang_id')
+        $penjualan = Penjualan::join('barangs','barangs.id','penjualans.barang_id')
         ->join('gudangs','gudangs.id','penjualans.gudang_id')
         ->join('customers','customers.id','penjualans.customer_id')
         ->select('penjualans.tanggal','penjualans.id','penjualans.notapenjualan','penjualans.quantity','barangs.namabarang','penjualans.hargajual', 'gudangs.namagudang', 'customers.namacustomer')
@@ -170,5 +170,29 @@ class PenjualanController extends Controller
  
         $pdf = PDF::loadView('penjualan.pdf', ['penjualan'=>$penjualan, 'totalharga'=>$totalharga]);
         return $pdf->download('penjualan.pdf');
+    }
+
+    public function filterForm()
+    {
+        return view('penjualan.filter-form');
+    }
+
+    public function filterPdf(Request $request)
+    {
+        $daritanggal = $request->daritanggal;
+        $sampaitanggal = $request->sampaitanggal;
+        $penjualan = Penjualan::join('barangs','barangs.id','penjualans.barang_id')
+        ->join('gudangs','gudangs.id','penjualans.gudang_id')
+        ->join('customers','customers.id','penjualans.customer_id')
+        ->whereBetween('tanggal', [$daritanggal, $sampaitanggal])
+        ->select('penjualans.tanggal','penjualans.id','penjualans.notapenjualan','penjualans.quantity','barangs.namabarang','penjualans.hargajual', 'gudangs.namagudang', 'customers.namacustomer')
+        ->orderBy('penjualans.tanggal', 'ASC')
+        ->get();
+
+        $totalharga = Penjualan::whereBetween('tanggal', [$daritanggal, $sampaitanggal])
+        ->sum(DB::raw('hargajual * quantity'));
+
+        $pdf = PDF::loadView('penjualan.filter-pdf', ['penjualan'=>$penjualan, 'totalharga'=>$totalharga]);
+        return $pdf->download('laporan-penjualan.pdf');
     }
 }
