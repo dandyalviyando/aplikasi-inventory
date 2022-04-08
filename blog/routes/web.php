@@ -30,6 +30,8 @@ Route::get('/customer/pdf', 'CustomerController@pdf');
 Route::resource('customer', 'CustomerController');
 
 Route::get('/pembelian/pdf', 'PembelianController@pdf');
+Route::get('/pembelian/filter-form', 'PembelianController@filterForm');
+Route::get('/pembelian/filter-pdf', 'PembelianController@filterPdf');
 Route::resource('pembelian', 'PembelianController');
 
 Route::get('/mutasi/pdf', 'MutasiController@pdf');

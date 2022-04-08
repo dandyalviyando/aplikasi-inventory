@@ -174,4 +174,29 @@ class PembelianController extends Controller
         $pdf = PDF::loadView('pembelian.pdf', ['pembelian'=>$pembelian, 'totalharga'=>$totalharga]);
         return $pdf->download('pembelian.pdf');
     }
+
+    public function filterForm()
+    {
+        return view('pembelian.filter-form');
+    }
+
+    public function filterPdf(Request $request)
+    {
+        $daritanggal = $request->daritanggal;
+        $sampaitanggal = $request->sampaitanggal;
+        $pembelian = Pembelian::join('suppliers', 'suppliers.id','pembelians.supplier_id')
+        ->join('barangs', 'barangs.id','pembelians.barang_id')
+        ->join('gudangs', 'gudangs.id','pembelians.gudang_id')
+        ->whereBetween('tanggal', [$daritanggal, $sampaitanggal])
+        ->select('pembelians.tanggal','pembelians.id','pembelians.notapembelian','pembelians.quantity','barangs.namabarang','barangs.hargamodal', 'gudangs.namagudang','suppliers.namasupplier')
+        ->orderBy('pembelians.tanggal', 'ASC')
+        ->get();
+
+        $totalharga = Pembelian::join('barangs', 'barangs.id','pembelians.barang_id')
+        ->whereBetween('tanggal', [$daritanggal, $sampaitanggal])
+        ->sum(DB::raw('barangs.hargamodal * pembelians.quantity'));
+
+        $pdf = PDF::loadView('pembelian.filter-pdf', ['pembelian'=>$pembelian, 'totalharga'=>$totalharga]);
+        return $pdf->download('laporan-pembelian.pdf');
+    }
 }

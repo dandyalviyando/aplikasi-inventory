@@ -122,6 +122,12 @@
             </a>
             <ul class="ml-3 nav nav-treeview">
               <li class="nav-item">
+                <a href="/pembelian/filter-form" class="nav-link">
+                  <i class="fas fa-file nav-icon"></i>
+                  <p>Laporan Pembelian</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/penjualan/filter-form" class="nav-link">
                   <i class="fas fa-file nav-icon"></i>
                   <p>Laporan Penjualan</p>
