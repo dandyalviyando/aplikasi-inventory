@@ -31,7 +31,7 @@ class HomeController extends Controller
         $pembelian = Pembelian::count();
         $penjualan = Penjualan::count();
         $mutasi = Mutasi::count();
-        $agenda = Agenda::all();
+        $agenda = Agenda::paginate(5);
 
         return view('home', compact('pembelian','penjualan','mutasi','agenda'));
 

@@ -38,6 +38,8 @@ Route::get('/penjualan/filter-form', 'PenjualanController@filterForm');
 Route::get('/penjualan/filter-pdf', 'PenjualanController@filterPdf');
 Route::resource('penjualan', 'PenjualanController');
 
+Route::resource('agenda', 'AgendaController');
+
 
 
 Auth::routes();

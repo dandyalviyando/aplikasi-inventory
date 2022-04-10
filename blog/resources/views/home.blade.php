@@ -60,11 +60,7 @@
 
               <div class="card-tools">
                 <ul class="pagination pagination-sm">
-                  <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
-                  <li class="page-item"><a href="#" class="page-link">1</a></li>
-                  <li class="page-item"><a href="#" class="page-link">2</a></li>
-                  <li class="page-item"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                  {{ $agenda->links() }}
                 </ul>
               </div>
             </div>
@@ -79,17 +75,30 @@
                   </div>
                   <span class="text">{{ $item->catatan }}</span>
                   <div class="tools">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
+                    <form action="{{ route('agenda.destroy', $item->id) }}" method="post" id="hapuscatatan">
+                      @csrf
+                      @method('DELETE')
+                      <a style="color: red" href="#" onclick="document.getElementById('hapuscatatan').submit();">
+                        <i onclick="submitForm(this);" class="fas fa-trash-alt"></i>
+                      </a>
+                    </form>
                   </div>
                 </li>
                 @endforeach
-
               </ul>
+
             </div>
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-              <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+              <form action={{ route('agenda.store') }} method="post">
+                @csrf
+                <div class="input-group">
+                  <input id="btn-input" type="text" name="catatan" class="form-control input-md" placeholder="Tambahkan Catatan">
+                  <span class="input-group-btn">
+                    <button onclick="submitForm(this);" type="submit" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Tambah</button>
+                  </span>   
+                </div>
+              </form>    
             </div>
           </div>
     </section>
