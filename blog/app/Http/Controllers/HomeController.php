@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pembelian;
+use App\Penjualan;
+use App\Mutasi;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $pembelian = Pembelian::count();
+        $penjualan = Penjualan::count();
+        $mutasi = Mutasi::count();
+
+        return view('home', compact('pembelian','penjualan','mutasi'));
+
+
     }
 }

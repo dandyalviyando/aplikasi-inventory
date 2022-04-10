@@ -9,7 +9,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3>{{ $penjualan }}</h3>
   
                   <p>Penjualan</p>
                 </div>
@@ -24,7 +24,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <h3>{{ $pembelian }}</h3>
   
                   <p>Pembelian</p>
                 </div>
@@ -39,7 +39,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3>{{ $mutasi }}</h3>
   
                   <p>Mutasi</p>
                 </div>
