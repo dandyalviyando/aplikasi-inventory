@@ -3,6 +3,9 @@
   <li><p>/</p></li>&nbsp;
   <li style="color: #777777"><a href={{route('supplier.index') }}>Supplier</a></li>
 @endsection
+@section('page-title')
+    Supplier
+@endsection
 @section('title')
     Supplier
 @endsection

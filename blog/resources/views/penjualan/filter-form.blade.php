@@ -3,6 +3,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href="/penjualan/filter-form">Laporan Penjualan</a></li>
 @endsection
+@section('page-title')
+    Cetak Laporan Penjualan
+@endsection
 @section('title')
     Cetak Laporan Penjualan
 @endsection

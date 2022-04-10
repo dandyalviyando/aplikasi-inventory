@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('customer.create') }}>Tambah Customer</a></li>
 @endsection
+@section('page-title')
+    Customer | Tambah Customer
+@endsection
 @section('title')
     Tambah Customer
 @endsection

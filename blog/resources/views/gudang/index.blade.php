@@ -3,6 +3,9 @@
   <li><p>/</p></li>&nbsp;
   <li style="color: #777777"><a href={{route('gudang.index') }}>Gudang</a></li>
 @endsection
+@section('page-title')
+    Gudang
+@endsection
 @section('title')
     Gudang
 @endsection

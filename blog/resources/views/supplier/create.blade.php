@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('supplier.create') }}>Tambah Supplier</a></li>
 @endsection
+@section('page-title')
+    Supplier | Tambah Supplier
+@endsection
 @section('title')
     Tambah Supplier
 @endsection

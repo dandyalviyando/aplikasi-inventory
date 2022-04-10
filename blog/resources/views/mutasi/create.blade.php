@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('mutasi.create') }}>Catat Mutasi Baru</a></li>
 @endsection
+@section('page-title')
+    Mutasi Barang | Catat Mutasi Baru
+@endsection
 @section('title')
     Catat Mutasi Baru
 @endsection

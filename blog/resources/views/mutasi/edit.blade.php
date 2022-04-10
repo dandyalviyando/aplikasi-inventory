@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{ route('mutasi.edit', $mutasi->id) }}>Edit Catatan Mutasi</a></li>
 @endsection
+@section('page-title')
+    Mutasi Barang | Edit Catatan Mutasi
+@endsection
 @section('title')
     Edit Catatan Mutasi
 @endsection

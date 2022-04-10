@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{ route('satuan.edit', $satuan->id) }}>Edit Satuan</a></li>
 @endsection
+@section('page-title')
+    Satuan | Edit Satuan
+@endsection
 @section('title')
     Edit Satuan
 @endsection

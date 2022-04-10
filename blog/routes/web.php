@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-})->middleware('auth');
-
 Route::get('/gudang/pdf', 'GudangController@pdf')->middleware('auth');
 Route::resource('gudang', 'GudangController')->middleware('auth');
 
@@ -46,4 +42,4 @@ Route::resource('penjualan', 'PenjualanController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

@@ -3,6 +3,9 @@
   <li><p>/</p></li>&nbsp;
   <li style="color: #777777"><a href={{route('customer.index') }}>Customer</a></li>
 @endsection
+@section('page-title')
+    Customer
+@endsection
 @section('title')
     Customer
 @endsection

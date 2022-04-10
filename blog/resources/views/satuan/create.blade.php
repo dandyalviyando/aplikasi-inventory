@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('satuan.create') }}>Tambah Satuan</a></li>
 @endsection
+@section('page-title')
+    Satuan | Tambah Satuan
+@endsection
 @section('title')
     Tambah Satuan
 @endsection

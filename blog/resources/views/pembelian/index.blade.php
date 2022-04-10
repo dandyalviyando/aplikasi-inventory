@@ -3,6 +3,9 @@
   <li><p>/</p></li>&nbsp;
   <li style="color: #777777"><a href={{route('pembelian.index') }}>Barang Masuk</a></li>
 @endsection
+@section('page-title')
+    Barang Masuk
+@endsection
 @section('title')
     Barang Masuk
 @endsection

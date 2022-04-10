@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('penjualan.create') }}>Catat Penjualan Baru</a></li>
 @endsection
+@section('page-title')
+    Barang Keluar | Catat Penjualan Baru
+@endsection
 @section('title')
     Catat Penjualan Baru
 @endsection

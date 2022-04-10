@@ -5,6 +5,9 @@
     <li><p style="color: #777777">/</p></li>&nbsp;
     <li style="color: #777777"><a href={{route('gudang.create') }}>Tambah Gudang</a></li>
 @endsection
+@section('page-title')
+    Gudang | Tambah Gudang
+@endsection
 @section('title')
     Tambah Gudang
 @endsection

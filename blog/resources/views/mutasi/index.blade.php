@@ -3,6 +3,9 @@
   <li><p>/</p></li>&nbsp;
   <li style="color: #777777"><a href={{route('mutasi.index') }}>Mutasi Barang</a></li>
 @endsection
+@section('page-title')
+    Mutasi Barang
+@endsection
 @section('title')
     Mutasi Barang
 @endsection
