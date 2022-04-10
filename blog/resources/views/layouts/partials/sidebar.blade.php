@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link">
       <img src={{ asset("images/logo.png") }} alt="AdminLTE Logo" class="brand-image">
-      <span class="brand-text font-weight-light">Inventory</span>
+      <span class="brand-text font-weight-light">INVENTORY</span>
     </a>
 
     <!-- Sidebar -->

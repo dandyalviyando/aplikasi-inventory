@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Pembelian;
 use App\Penjualan;
 use App\Mutasi;
+use App\Agenda;
 use DB;
 
 class HomeController extends Controller
@@ -30,8 +31,9 @@ class HomeController extends Controller
         $pembelian = Pembelian::count();
         $penjualan = Penjualan::count();
         $mutasi = Mutasi::count();
+        $agenda = Agenda::all();
 
-        return view('home', compact('pembelian','penjualan','mutasi'));
+        return view('home', compact('pembelian','penjualan','mutasi','agenda'));
 
 
     }
