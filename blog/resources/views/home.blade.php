@@ -93,9 +93,9 @@
               <form action={{ route('agenda.store') }} method="post">
                 @csrf
                 <div class="input-group">
-                  <input id="btn-input" type="text" name="catatan" class="form-control input-md" placeholder="Tambahkan Catatan">
+                  <input onkeyup="activeButton()" id="catatan" type="text" name="catatan" class="form-control input-md" placeholder="Tambahkan Catatan">
                   <span class="input-group-btn">
-                    <button onclick="submitForm(this);" type="submit" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Tambah</button>
+                    <button id="tambahcatatan" disabled="true" onclick="submitForm(this);" type="submit" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Tambah</button>
                   </span>   
                 </div>
               </form>    

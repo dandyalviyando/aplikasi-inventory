@@ -65,6 +65,14 @@
       // submit the form    
       btn.form.submit();
   }
+
+  function activeButton(btn){
+    if(document.getElementById('catatan').value==="") { 
+      document.getElementById('tambahcatatan').disabled = true; 
+    }else{ 
+      document.getElementById('tambahcatatan').disabled = false;
+    }
+  }
 </script>
 
 </body>
