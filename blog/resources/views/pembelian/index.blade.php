@@ -48,7 +48,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($pembelian as $item)
+            @forelse ($pembelian as $item)
               <tr>
                 <td>
                   <p>{{ $item->tanggal}}</p>
@@ -81,7 +81,13 @@
                   </form>
               	</td>
               </tr>
-            @endforeach
+              @empty
+              <tr>
+                <td colspan="6" style="text-align: center">
+                  <p>Data tidak ditemukan.</p>
+                </td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>

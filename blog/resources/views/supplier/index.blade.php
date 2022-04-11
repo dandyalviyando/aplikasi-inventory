@@ -45,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($supplier as $item)
+            @forelse ($supplier as $item)
               <tr>
                 <td>
                   <p>{{ $item->kodesupplier}}</p>
@@ -68,7 +68,13 @@
                   </form>
               	</td>
               </tr>
-            @endforeach
+              @empty
+              <tr>
+                <td colspan="6" style="text-align: center">
+                  <p>Data tidak ditemukan.</p>
+                </td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>

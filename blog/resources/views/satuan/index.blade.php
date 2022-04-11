@@ -42,7 +42,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($satuan as $key => $item)
+            @forelse ($satuan as $key => $item)
               <tr>
                 <td>{{ $satuan -> firstItem() + $key }}</td>
                 <td>
@@ -57,7 +57,13 @@
                   </form>
               	</td>
               </tr>
-            @endforeach
+              @empty
+              <tr>
+                <td colspan="6" style="text-align: center">
+                  <p>Data tidak ditemukan.</p>
+                </td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
