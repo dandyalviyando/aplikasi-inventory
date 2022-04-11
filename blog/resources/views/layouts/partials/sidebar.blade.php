@@ -13,7 +13,7 @@
           <img src={{asset ("/adminlte/dist/img/avatar.png") }} class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Bambang Suryodiporo</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
