@@ -40,6 +40,8 @@ Route::resource('penjualan', 'PenjualanController');
 
 Route::resource('agenda', 'AgendaController');
 
+Route::resource('user', 'UserController');
+
 
 
 Auth::routes();
