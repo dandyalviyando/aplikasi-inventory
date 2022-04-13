@@ -28,10 +28,18 @@
         <div class="form-group">
             <label style="display: inline-block" for="barang_id">Nama Barang</label> &nbsp;&nbsp;
             <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('barang.create') }}> Buat Baru</a>)</p>
-            <select class="form-control" id="barang_id" name="barang_id" value="{{ old('barang_id') }}">
+            <select class="form-control" id="barang_id" name="barang_id">
                 <option value="">--- Pilih Opsi Barang ---</option>
                 @foreach ($barang as $item)
-                <option value="{{ $item->id }}">{{ $item->namabarang }}</option>
+                  @if(old('barang_id') == $item->id)
+                    <option value="{{ $item->id }}" selected>{{ $item->namabarang }}</option>
+                  @else 
+                    @if ($mutasi->barang_id == $item->id)
+                      <option value="{{ $item->id }}" selected>{{ $item->namabarang }}</option>
+                    @else
+                      <option value="{{ $item->id }}">{{ $item->namabarang }}</option>
+                    @endif
+                  @endif
                 @endforeach
             </select>
         </div>
@@ -41,10 +49,18 @@
         <div class="form-group">
             <label style="display: inline-block" for="gudang_asal_id">Asal</label> &nbsp;&nbsp;
             <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('gudang.create') }}> Buat Baru</a>)</p>
-            <select class="form-control" id="gudang_asal_id" name="gudang_asal_id" value="{{ old('gudang_asal_id') }}">
+            <select class="form-control" id="gudang_asal_id" name="gudang_asal_id">
                 <option value="">--- Pilih Opsi Asal ---</option>
                 @foreach ($gudang as $item)
-                <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                  @if(old('gudang_asal_id') == $item->id)
+                    <option value="{{ $item->id }}" selected>{{ $item->namagudang }}</option>
+                  @else 
+                    @if ($mutasi->gudang_asal_id == $item->id)
+                      <option value="{{ $item->id }}" selected>{{ $item->namagudang }}</option>
+                    @else
+                      <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                    @endif
+                  @endif
                 @endforeach
             </select>
         </div>
@@ -61,10 +77,18 @@
         <div class="form-group">
             <label style="display: inline-block" for="gudang_tujuan_id">Tujuan</label> &nbsp;&nbsp;
             <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('gudang.create') }}> Buat Baru</a>)</p>
-            <select class="form-control" id="gudang_tujuan_id" name="gudang_tujuan_id" value="{{ old('gudang_tujuan_id') }}">
+            <select class="form-control" id="gudang_tujuan_id" name="gudang_tujuan_id">
                 <option value="">--- Pilih Opsi Tujuan ---</option>
                 @foreach ($gudang as $item)
-                <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                  @if(old('gudang_tujuan_id') == $item->id)
+                    <option value="{{ $item->id }}" selected>{{ $item->namagudang }}</option>
+                  @else 
+                    @if ($mutasi->gudang_tujuan_id == $item->id)
+                      <option value="{{ $item->id }}" selected>{{ $item->namagudang }}</option>
+                    @else
+                      <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                    @endif
+                  @endif
                 @endforeach
             </select>
         </div>

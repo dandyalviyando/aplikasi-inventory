@@ -34,10 +34,14 @@
         <div class="form-group">
           <label style="display: inline-block" for="supplier_id">Supplier</label> &nbsp;&nbsp;
           <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('supplier.create') }}> Buat Baru</a>)</p>
-          <select class="form-control" id="supplier_id" name="supplier_id" value="{{ old('supplier_id') }}">
+          <select class="form-control" id="supplier_id" name="supplier_id">
             <option value="">--- Pilih Opsi Supplier ---</option>
             @foreach ($supplier as $item)
-            <option value="{{ $item->id }}">{{ $item->namasupplier }}</option>
+              @if(old('supplier_id') == $item->id)
+                <option value="{{ $item->id }}" selected>{{ $item->namasupplier }}</option>
+              @else 
+                <option value="{{ $item->id }}">{{ $item->namasupplier }}</option>
+              @endif
             @endforeach
           </select>
         </div>
@@ -47,10 +51,14 @@
         <div class="form-group">
             <label style="display: inline-block" for="barang_id">Nama Barang</label> &nbsp;&nbsp;
             <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('barang.create') }}> Buat Baru</a>)</p>
-            <select class="form-control" id="barang_id" name="barang_id" value="{{ old('barang_id') }}">
+            <select class="form-control" id="barang_id" name="barang_id">
               <option value="">--- Pilih Opsi Barang ---</option>
               @foreach ($barang as $item)
-              <option value="{{ $item->id }}">{{ $item->namabarang }}</option>
+                @if(old('barang_id') == $item->id)
+                  <option value="{{ $item->id }}" selected>{{ $item->namabarang }}</option>
+                @else 
+                  <option value="{{ $item->id }}">{{ $item->namabarang }}</option>
+                @endif
               @endforeach
             </select>
         </div>
@@ -67,10 +75,14 @@
         <div class="form-group">
             <label style="display: inline-block" for="gudang_id">Tujuan</label> &nbsp;&nbsp;
             <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('gudang.create') }}> Buat Baru</a>)</p>
-            <select class="form-control" id="gudang_id" name="gudang_id" value="{{ old('gudang_id') }}">
+            <select class="form-control" id="gudang_id" name="gudang_id">
               <option value="">--- Pilih Opsi Tujuan ---</option>
               @foreach ($gudang as $item)
-              <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                @if(old('gudang_id') == $item->id)
+                  <option value="{{ $item->id }}" selected>{{ $item->namagudang }}</option>
+                @else 
+                  <option value="{{ $item->id }}">{{ $item->namagudang }}</option>
+                @endif
               @endforeach
             </select>
         </div>

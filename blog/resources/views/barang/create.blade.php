@@ -27,10 +27,14 @@
         <div class="form-group">
           <label style="display: inline-block" for="satuan_id">Satuan Barang</label> &nbsp;&nbsp;
           <p style="display: inline-block; font-size: 15px">(Tidak tersedia ?<a href={{route('satuan.create') }}> Buat Baru</a>)</p>
-          <select class="form-control" id="satuan_id" name="satuan_id" value="{{ old('satuan_id') }}">
+          <select class="form-control" id="satuan_id" name="satuan_id">
             <option value="">--- Pilih Opsi Satuan ---</option>
             @foreach ($satuan as $item)
-            <option value="{{ $item->id }}">{{ $item->namasatuan }}</option>
+              @if(old('satuan_id') == $item->id)
+                <option value="{{ $item->id }}" selected>{{ $item->namasatuan }}</option>
+              @else 
+                <option value="{{ $item->id }}">{{ $item->namasatuan }}</option>
+              @endif
             @endforeach
           </select>
         </div>
